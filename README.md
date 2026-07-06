@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛒 Spring Boot E-Commerce Backend
+# 🛒 Spring Boot E-Commerce Platform
 
 ![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=openjdk)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.1-6DB33F?style=for-the-badge&logo=springboot)
@@ -18,13 +18,11 @@
 
 ## 📖 Overview
 
-This project is a secure and scalable RESTful E-Commerce backend built using **Spring Boot**. It provides a complete backend solution for an online shopping platform, featuring authentication, product and category management, shopping cart operations, address management, order processing, and image upload support.
+This repository currently contains the backend of a full-stack E-Commerce platform built using **Spring Boot**. It provides a secure and scalable **RESTful API** for authentication, product and category management, shopping cart operations, address management, order processing, payment handling, and product image uploads.
 
-The application follows a clean layered architecture with **Controllers**, **Services**, **Repositories**, and **DTOs**, while **Spring Security** and **JWT authentication** protect secured endpoints. Data persistence is handled using **Spring Data JPA** and **Hibernate**, with **PostgreSQL** serving as the relational database.
+The application follows a clean **Layered Architecture** (Controller → Service → Repository) with **Spring Security** and **JWT Authentication** securing protected endpoints. Data persistence is handled using **Spring Data JPA**, **Hibernate**, and **PostgreSQL**, while features such as **Bean Validation**, **Global Exception Handling**, **Pagination**, and **Role-Based Access Control** ensure a robust and maintainable backend.
 
-The project emphasizes clean code practices, modular design, exception handling, pagination, sorting, validation, and role-based authorization, making it a strong backend portfolio project that demonstrates real-world API development using the Spring ecosystem.
-
----
+The backend was successfully deployed on **AWS Elastic Beanstalk** with **Amazon RDS (PostgreSQL)** during development. A modern **React** frontend is planned to transform this repository into a complete full-stack E-Commerce platform.
 
 ## 🌟 Project Highlights
 
