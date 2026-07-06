@@ -26,7 +26,7 @@ The backend was successfully deployed on **AWS Elastic Beanstalk** with **Amazon
 
 ## 🌟 Project Highlights
 
-- 🛒 Complete **E-Commerce Backend** with **40+ RESTful API Endpoints**
+- 🛒 Complete **E-Commerce Backend** with **25+ RESTful API Endpoints**
 - 🔐 Cookie-Based **JWT** Authentication and Authorization
 - 👥 **Role-Based Access Control** (User, Seller & Admin)
 - 📦 CRUD Operations across Products, Categories, Cart, Addresses & Orders
@@ -644,25 +644,6 @@ The backend has been designed to be easily extensible. Some planned enhancements
 - 🐳 Docker Containerization
 - 🚀 CI/CD Pipeline using GitHub Actions
 - ☁️ Image Storage using AWS S3
-
----
-
-## 🤝 Contributing
-
-Contributions, suggestions, and improvements are always welcome.
-
-If you'd like to contribute:
-
-1. Fork the repository
-2. Create a new feature branch
-3. Commit your changes
-4. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**.
 
 ---
 
