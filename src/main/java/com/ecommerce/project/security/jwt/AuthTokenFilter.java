@@ -57,9 +57,26 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);    // To execute any default or inbuilt pending filters
     }
 
+//    private String parseJwt(HttpServletRequest request) {
+//        String jwt = jwtUtils.getJwtFromCookies(request);
+//        logger.debug("AuthTokenFilter.java: {}", jwt);
+//        return jwt;
+//    }
+
+    /* Swagger UI works only with header based authentication */
+
     private String parseJwt(HttpServletRequest request) {
-        String jwt = jwtUtils.getJwtFromCookies(request);
-        logger.debug("AuthTokenFilter.java: {}", jwt);
-        return jwt;
+        String jwtFromCookie = jwtUtils.getJwtFromCookies(request);
+        logger.debug("AuthTokenFilter.java: {}", jwtFromCookie);
+        if(jwtFromCookie != null){
+            return jwtFromCookie;
+        }
+        String jwtFromHeader = jwtUtils.getJwtFromHeader(request);
+        logger.debug("AuthTokenFilter.java: {}", jwtFromHeader);
+        if(jwtFromHeader != null){
+            return jwtFromHeader;
+        }
+        return null;
     }
+
 }

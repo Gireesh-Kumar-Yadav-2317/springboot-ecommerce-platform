@@ -1,5 +1,6 @@
 package com.ecommerce.project.payload;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -11,7 +12,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CategoryDTO {
 
+    @Schema(description = "Category ID", example = "101")
     private Long categoryId;
+
+    @Schema(description = "Category name for the category you wish to create", example = "Sports & Fitness")
     @NotBlank   // Use @Valid in controller layer to get a user-friendly error message and code
     @Size(min = 4, message = "Category name must contain at least 4 characters!")
     private String categoryName;
