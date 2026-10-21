@@ -73,4 +73,7 @@ jobs:
       - name: Build Docker Image
         if: success()
         run: docker build --pull --tag ecommerce-app:${{github.sha}}
-        
+
+      - name: Verify Docker image
+        if: success()
+        run: docker image inspect ecommerce-app:${{ github.sha }}
