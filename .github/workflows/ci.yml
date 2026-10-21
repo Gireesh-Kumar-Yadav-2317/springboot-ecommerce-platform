@@ -58,3 +58,15 @@ jobs:
                 **/target/failsafe-reports/**
             if-no-files-found: ignore
             retention-days: 7
+
+      - name: Upload packaged JAR
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ecommerce-application-jar
+          path: |
+            **/target/*.jar
+            !**/target/*-sources.jar
+            !**/target/*-javadoc.jar
+          if-no-files-found: error
+          retention-days: 7
