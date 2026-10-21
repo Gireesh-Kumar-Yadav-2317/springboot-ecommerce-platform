@@ -43,4 +43,5 @@ jobs:
           SPRING_APP_JWTEXPIRATIONMS: "86400000"
           SPRING_APP_JWTSECRET: ${{ secrets.JWT_SECRET }}
           SPRING_ECOM_APP_JWTCOOKIENAME: "ecom-jwt"
+          PROJECT_IMAGE: "uploads"
         run: ./mvnw -B -ntp clean verify
