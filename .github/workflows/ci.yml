@@ -1,3 +1,4 @@
+
 name: Ecommerce CI
 
 on:
@@ -31,8 +32,9 @@ jobs:
         with:
           distribution: temurin
           java-version: "21"
+          cache: maven
 
-      - name: Verify Java and Maven wrapper
+      - name: Verify Java and Maven Wrapper
         run: |
           java -version
           chmod +x mvnw
@@ -43,5 +45,16 @@ jobs:
           SPRING_APP_JWTEXPIRATIONMS: "86400000"
           SPRING_APP_JWTSECRET: ${{ secrets.JWT_SECRET }}
           SPRING_ECOM_APP_JWTCOOKIENAME: "ecom-jwt"
-          PROJECT_IMAGE: "uploads"
+          PROJECT_IMAGE: "images/"
         run: ./mvnw -B -ntp clean verify
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+            name: maven-test-reports
+            path: |
+                **/target/surefire-reports/**
+                **/target/failsafe-reports/**
+            if-no-files-found: ignore
+            retention-days: 7
